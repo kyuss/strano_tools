@@ -3,7 +3,7 @@ StranoTools
 
 StranoTools are collection of scripts to manage capistrano based projects.
 
-* bin/parse_capfile.rb - this script will parse your capistrano descriptor and output json list of tasks (with descriptions) and declared variabled
+* bin/parse_capfile.rb - this script will parse your capistrano descriptor and output json list of tasks (with descriptions) and declared variables
 
 Installation
 ------------
