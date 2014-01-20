@@ -15,8 +15,8 @@ Installation
 Usage
 ------------
 
-`parse_capfile.rb -p PATH # where PATH is your project path`
+`parse_capfile.rb -p PATH # where PATH is your project path, default is "."`
 
 Example
 ------------
-`parse_capfile.rb .`
+`parse_capfile.rb`
