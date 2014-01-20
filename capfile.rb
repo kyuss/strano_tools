@@ -1,7 +1,6 @@
 require 'capistrano/cli'
 require 'fileutils'
 
-module StranoTools
   class Capfile
 
     def initialize(path, stage = nil)
@@ -51,12 +50,11 @@ module StranoTools
       if !@cap.variables[:stages].nil?
         return Hash[
           @cap.variables[:stages].map do |stage|   
-            [stage, filter(StranoTools::Capfile.new(@path, stage).variables)]
+            [stage, filter(Capfile.new(@path, stage).variables)]
           end
         ]
       else
         return Hash["default",filter(@cap.variables)]
       end      
     end
-  end 
 end

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby   
 
-require 'strano_tools'
+require './capfile.rb'
 require 'json'
 require 'optparse'
 
@@ -12,6 +12,6 @@ OptionParser.new do |opts|
 end.parse!
 
 
-capfile = StranoTools::Capfile.new(options[:path])
+capfile = Capfile.new(options[:path])
 data = {:tasks => capfile.tasks, :stages => capfile.stages }.to_json
 puts data
