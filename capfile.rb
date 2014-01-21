@@ -1,6 +1,6 @@
 require 'capistrano/cli'
 require 'fileutils'
-
+	
   class Capfile
 
     def initialize(path, stage = nil)

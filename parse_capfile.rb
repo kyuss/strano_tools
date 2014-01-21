@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby   
 
-require './capfile.rb'
+require File.expand_path(File.dirname(__FILE__) + '/capfile.rb')
 require 'json'
 require 'optparse'
 
