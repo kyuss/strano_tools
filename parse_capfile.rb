@@ -12,7 +12,13 @@ OptionParser.new do |opts|
   opts.on('-o output', '--output=output', 'Output file') { |output| options[:output] = output}
 end.parse!
 
+data = "{}"
+begin
+	capfile = Capfile.new(options[:path])
+	data = {:tasks => capfile.tasks, :stages => capfile.stages }.to_json
+rescue Exception => e
+	data = {:error => e.class.to_s, :message => e.message, :backtrace => e.backtrace.join("\n")}.to_json
+ensure
+	File.open(options[:output],"w") { |file| file.write(data) }
+end
 
-capfile = Capfile.new(options[:path])
-data = {:tasks => capfile.tasks, :stages => capfile.stages }.to_json
-File.open(options[:output],"w") { |file| file.write(data) }
