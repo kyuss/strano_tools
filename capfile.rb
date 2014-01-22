@@ -6,6 +6,7 @@ require 'fileutils'
     def initialize(path, stage = nil)
       @path = path
       @cap = load(stage)
+      puts @cap.branch
     end
 
     def tasks
@@ -59,10 +60,10 @@ require 'fileutils'
             }
           end        
       else
-        {
+        [{
           :name => "default", 
           :variables => filter(@cap.variables)
-        }
+        }]
       end      
     end
 end
