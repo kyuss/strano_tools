@@ -5,8 +5,7 @@ require 'fileutils'
 
     def initialize(path, stage = nil)
       @path = path
-      @cap = load(stage)
-      puts @cap.branch
+      @cap = load(stage)      
     end
 
     def tasks
